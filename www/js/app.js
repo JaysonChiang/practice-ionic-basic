@@ -6,6 +6,10 @@
 angular.module('App', ['ionic'])
 .config(function($stateProvider, $urlRouterProvider){
   $stateProvider
+  .state('tour',{
+    url:'/tour',
+    templateUrl:'views/tour/tour.html'
+  })
   .state('home',{
     url:'/home',
     templateUrl:'views/home/home.html'
@@ -25,7 +29,7 @@ angular.module('App', ['ionic'])
     controller:'RestaurantsController',
     templateUrl:'views/restaurants/restaurants.html'
   });
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/tour');
 })
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
